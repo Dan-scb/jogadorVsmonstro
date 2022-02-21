@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+*{
+    font-family:'Roboto', sans-serif;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.place{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 80vw;
+    height: 30vh;
+    box-shadow: 1px 1px 25px  rgb(206, 206, 206);
+    font-size: 1.5rem;
+}
+.place > div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#lifeJogador{
+    width: 400px;
+    height: 20px;
+    border: solid 2px green;
+    
+}
+
+#lifeMonstro{
+    width: 400px;
+    height: 20px;
+    border: solid 2px green;
+    
+}
+
+.lfs{
+    width: 100%;
+    height: 100%;
+    background-color: green;
+}
+
+.lfd{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(92, 76, 53);
+}
+
+.comands{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    width: 80vw;
+    height: 10vh;
+    box-shadow: 1px 1px 25px  rgb(206, 206, 206);
+    margin-top: 25px;
+    
+}
+.comands > button{
+    font-size: 1.5rem;
+    padding: 6px;
+    border-radius: 4px;
+    border: 1px solid silver;
+    
+}
+
+.atk{
+    background-color: rgb(199, 29, 29);
+    color: #fff;
+}
+.sp{
+    background-color: rgb(185, 130, 28);
+    color: black;
+}
+.hp{
+    background-color: rgb(12, 150, 12);
+    color: #fff;
+}
+.ms{
+    background-color: rgb(168, 164, 164);
+}
+
+.turns{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    width: 80vw;
+    box-shadow: 1px 1px 25px  rgb(206, 206, 206);
+    margin-top: 15px;
+    padding-top: 20px;
+}
+.turns > span{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2px;
+    width: 100%;
+}
+span > strong{
+    color: #fff;
+    width: 95%;
+    height: 100%;
+    text-align: center;
+    margin: 1px 0px;
+}
+.turnP{
+    background-color: rgb(177, 177, 218);
+}
+.turnM{
+    background-color: rgb(182, 106, 106);
+}
+
+.gameCondition{
+    width: 80vw;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 1px 1px 25px  rgb(206, 206, 206);
+    margin: 25px 0px;
+}
+.gameCondition > strong{
+    font-size: 1.7rem;
+}
+
+.gameCondition > .winCondition{
+    color: green;
+}
+.gameCondition > .loseCondition{
+    color: red;
+}
+
+.newGame{
+    background-color: rgb(201, 74, 201);
+    color: #fff;
+}
+.cure{
+    background-color: rgb(162, 197, 109);
+}

@@ -1,0 +1,57 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+<link rel="stylesheet" href="./style.css">
+<div id="app">
+    <div class="place">
+    <div id="jogador">
+        <h3>JOGADOR</h3>
+        <div id="lifeJogador">
+    <div class="lfs" :style="{'width':alternP}" v-if="lifePlayer > 30" ></div>
+    <div class="lfd" :style="{'width':alternP}" v-else ></div>
+    
+    </div>
+        <h3>{{alternP}}</h3>
+    </div>
+
+    <div id="monstro">
+        <h3>MONSTRO</h3>
+        <div id="lifeMonstro">
+            <div class="lfs" :style="{'width': alternM}" v-if="lifeMonster > 30"></div>
+            <div class="lfd" :style="{'width': alternM}" v-else></div>
+        </div>
+        <h3>{{alternM}}</h3>
+    </div>
+    </div>
+
+    <div class="gameCondition" v-if="lifePlayer <= 0 || lifeMonster <= 0">
+        <strong v-if="lifeMonster <= 0" class="winCondition">Você Venceu! :)</strong>
+        <strong v-else class="loseCondition">Você perdeu! :(</strong> 
+    </div>
+
+    
+    <div class="comands" v-if="lifePlayer > 0 && lifeMonster > 0 && start == true">
+    <button @click="lifeCount($event)" class="atk" value="atk">ATAQUE</button>
+    <button @click="lifeCount($event)" class="sp" value="sp">ATAQUE ESPECIAL</button>
+    <button @click="lifeCount($event)" class="hp" value="hp">CURAR</button>
+    <button @click="wo" class="ms" value="hp">DESISTIR</button>
+    </div>
+    
+    <div v-else class="comands">
+        <button @click="newGame" class="newGame">NOVO JOGO</button>
+    </div>
+
+    <div class="turns" v-if="start == true && turns.length > 0">
+        <span v-for="i in turns">
+            <template v-if="i[0].length == 2">
+            <strong class="cure">JOGADOR CUROU {{i[0][0]}} DE VIDA.</strong>
+            <strong class="turnM">MONSTRO ATINGIU JOGADOR COM {{i[1]}}.</strong> 
+            </template>
+            <template v-else>
+            <strong class="turnP">JOGADOR ATINGIU MONSTRO COM {{i[1]}}.</strong>
+            <strong class="turnM">MONSTRO ATINGIU JOGADOR COM {{i[0]}}.</strong> 
+            </template>
+            
+        </span>
+    </div>
+</div>
+
+<script src="./app.js"></script>
